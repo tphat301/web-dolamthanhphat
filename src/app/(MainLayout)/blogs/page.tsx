@@ -1,0 +1,109 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Blogs - Thành Phát - Fullstack Developer',
+  keywords: 'Đây là trang blogs viết về các vấn đề liên quan đến lập trình website',
+  description: 'Đây là trang blogs viết về các vấn đề liên quan đến lập trình website',
+  icons: {
+    icon: '/images/favicon.png'
+  },
+  openGraph: {
+    title: 'Blogs - Thành Phát - Fullstack Developer',
+    description: 'Đây là trang blogs viết về các vấn đề liên quan đến lập trình website',
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/seo.jpg`,
+        width: 200,
+        height: 200,
+        alt: 'Blogs - Thành Phát - Fullstack Developer'
+      }
+    ],
+    locale: 'vi_VN',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blogs - Thành Phát - Fullstack Developer',
+    description: 'Đây là trang blogs viết về các vấn đề liên quan đến lập trình website',
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/seo.jpg`,
+        width: 200,
+        height: 200,
+        alt: 'Blogs - Thành Phát - Fullstack Developer'
+      }
+    ]
+  }
+}
+
+export default function BlogsPage() {
+  return (
+    <div className='wrap-content mn:py-10 lg:py-16'>
+      <h1 className='font-bold mn:text-2xl lg:text-4xl capitalize text-center tracking-wider mb-2'>
+        Đỗ Lâm Thành Phát Blog
+      </h1>
+      <p className='text-center lg:text-base mn:text-sm'>Các bài viết liên quan đến lập trình</p>
+      <main className='lg:mt-10 mn:mt-6'>
+        <section>
+          <div className='relative sm:ml-[calc(2rem+1px)] sm:pb-12 md:ml-[calc(3.5rem+1px)] lg:ml-[max(calc(14.5rem+1px),calc(100%-48rem))]'>
+            <div className='absolute top-3 bottom-0 right-full mr-7 hidden w-px  sm:block md:mr-[3.25rem]'></div>
+            <div className='space-y-16'>
+              <article className='group relative'>
+                <div className='absolute -inset-y-2.5 -inset-x-4 dark:group-hover:bg-accent/40 group-hover:bg-accent sm:rounded-2xl md:-inset-y-4 md:-inset-x-6' />
+                <svg
+                  viewBox='0 0 9 9'
+                  className='text-prose-body absolute right-full top-2 mr-6 hidden h-[calc(0.5rem+1px)] w-[calc(0.5rem+1px)] overflow-visible sm:block md:mr-12'
+                >
+                  <circle cx='4.5' cy='4.5' r='4.5' stroke='currentColor' strokeWidth={2} />
+                </svg>
+                <div className='relative '>
+                  <h2 className='pt-8 text-base font-semibold tracking-tight  lg:pt-0 text-prose-heading'>
+                    [Hướng dẫn full] Deploy website Next.Js hoặc Node.Js lên VPS
+                  </h2>
+                  <div className=' z-10 mt-2 mb-4 line-clamp-2 text-prose-body'>
+                    <p>
+                      Node.Js hay Next.Js khi deploy lên VPS đều tương tự nhau. Trong bài này mình sẽ hướng dẫn các bạn
+                      deploy lên Vultr server
+                    </p>
+                  </div>
+                  <dl className='absolute left-0 top-0 lg:left-auto lg:right-full lg:mr-[calc(6.5rem+1px)]'>
+                    <dt className='sr-only'>Date</dt>
+                    <dd className='whitespace-nowrap text-sm text-muted-foreground'>
+                      <time dateTime='2022-09-09T16:24:00.000Z'>2024-11-11</time>
+                    </dd>
+                  </dl>
+                </div>
+                <Link
+                  className='flex items-center text-sm font-medium text-prose-link'
+                  title='[Hướng dẫn full] Deploy website Next.Js hoặc Node.Js lên VPS'
+                  href='/blogs/deploy-website-nextjs-hoac-nodejs-len-vps'
+                >
+                  <span className='absolute -inset-y-2.5 -inset-x-4 sm:rounded-2xl md:-inset-y-4 md:-inset-x-6' />
+                  <span className='relative'>
+                    Đọc thêm
+                    <span className='sr-only'>, [Hướng dẫn full] Deploy website Next.Js hoặc Node.Js lên VPS</span>
+                  </span>
+                  <svg
+                    className='relative mt-px ml-2.5 overflow-visible text-prose-link'
+                    width={3}
+                    height={6}
+                    viewBox='0 0 3 6'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth={2}
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path d='M0 0L3 3L0 6' />
+                  </svg>
+                </Link>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  )
+}
