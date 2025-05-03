@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords: SEO_PAGE.KEYWORDS_BLOG,
   description: SEO_PAGE.DESCRIPTION_BLOG,
   icons: {
-    icon: `${process.env.NEXT_PUBLIC_BASE_URL}/images/favicon.png`
+    icon: '/images/favicon.png'
   },
   openGraph: {
     title: SEO_PAGE.TITLE_BLOG,

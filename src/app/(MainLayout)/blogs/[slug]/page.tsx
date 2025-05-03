@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props) {
       keywords: data.seo_keywords,
       description: data.seo_description,
       icons: {
-        icon: `${process.env.NEXT_PUBLIC_BASE_URL}/images/favicon.png`
+        icon: '/images/favicon.png'
       },
       openGraph: {
         title: data.seo_title,

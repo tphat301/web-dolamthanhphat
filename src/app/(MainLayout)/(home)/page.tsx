@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: SEO_PAGE.KEYWORDS_HOME,
   description: SEO_PAGE.DESCRIPTION_HOME,
   icons: {
-    icon: `${process.env.NEXT_PUBLIC_BASE_URL}/images/favicon.png`
+    icon: '/images/favicon.png'
   },
   openGraph: {
     title: SEO_PAGE.TITLE_HOME,
