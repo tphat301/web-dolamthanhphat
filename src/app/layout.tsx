@@ -20,7 +20,7 @@ export default function RootLayout({
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
-        <Script  async src="https://www.googletagmanager.com/gtag/js?id=G-S5EKCBG0MB" strategy='afterInteractive' />
+        <Script async src='https://www.googletagmanager.com/gtag/js?id=G-S5EKCBG0MB' strategy='afterInteractive' />
         <Script id='google-analytics' strategy='afterInteractive'>
           {`
            window.dataLayer = window.dataLayer || [];

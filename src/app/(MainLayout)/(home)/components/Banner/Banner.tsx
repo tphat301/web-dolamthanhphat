@@ -6,9 +6,7 @@ const Banner = () => {
     <div className='wrap-content mn:py-8 md:py-50'>
       <div className='grid grid-cols-12'>
         <div className='mn:col-span-12 md:col-span-5 flex flex-col justify-center overflow-hidden mn:mb-6 md:mb-0'>
-          <h3 className='mn:text-base md:text-4xl mn:mb-2 md:mb-8 uppercase font-bold relative after:content-[""] after:top-[50%] after:left-[23%] after:bg-[#000] after:w-[410px] after:h-[2px] after:absolute after:translate-y-[-50%] mn:after:hidden lg:after:block'>
-            Hello
-          </h3>
+          <h3 className='mn:text-base md:text-4xl mn:mb-2 md:mb-8 uppercase font-bold'>Hello</h3>
           <h1 className='uppercase mn:text-2xl md:text-5xl font-bold mn:mb-2 md:mb-8 lett tracking-wider'>
             I am Thành Phát
           </h1>

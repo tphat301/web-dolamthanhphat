@@ -69,7 +69,7 @@ const Partner = () => {
               <span className='text-[#854fee] dark:text-white md:font-extrabold mn:font-bold mn:text-6xl md:text-8xl '>
                 03
               </span>
-              <span className='mn:text-xl md:text-2xl font-semibold'>Years Experience Working</span>
+              <span className='mn:text-xl md:text-2xl font-semibold'>Kinh nghiệm làm việc</span>
             </div>
             <div className='flex items-center mn:gap-2 md:gap-4'>
               <div>
@@ -89,7 +89,9 @@ const Partner = () => {
                 </svg>
               </div>
               <div>
-                <p className='mn:text-base md:text-xl text-[#854fee] dark:text-white uppercase'>call us now</p>
+                <p className='mn:text-base md:text-xl text-[#854fee] dark:text-white uppercase'>
+                  Gọi ngay cho tôi nếu bạn có nhu cầu làm website
+                </p>
                 <Link
                   href='tel:0339355715'
                   className='mn:text-xl md:text-2xl font-semibold hover:text-[#854fee]'

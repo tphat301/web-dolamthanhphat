@@ -10,13 +10,10 @@ export const metadata: Metadata = {
   title: SEO_PAGE.TITLE_BLOG,
   keywords: SEO_PAGE.KEYWORDS_BLOG,
   description: SEO_PAGE.DESCRIPTION_BLOG,
-  icons: {
-    icon: '/images/favicon.png'
-  },
   openGraph: {
     title: SEO_PAGE.TITLE_BLOG,
     description: SEO_PAGE.DESCRIPTION_BLOG,
-    url: process.env.NEXT_PUBLIC_BASE_URL,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}${PATH.BLOGS}`,
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/seo.jpg`,
@@ -59,13 +56,13 @@ export default async function BlogsPage() {
   }
   if (!blogs) return
   return (
-    <div className='wrap-content mn:py-10 lg:py-16'>
+    <div className='wrap-content mn:py-10 lg:py-16 overflow-hidden'>
       <h1 className='font-bold mn:text-2xl lg:text-4xl capitalize text-center tracking-wider mb-2'>
         Đỗ Lâm Thành Phát Blog
       </h1>
-      <p className='text-center lg:text-base mn:text-sm'>Các bài viết liên quan đến lập trình</p>
-      <main className='lg:mt-10 mn:mt-6'>
-        <section>
+      <p className='text-center text-base'>Các bài viết liên quan đến lập trình</p>
+      <main className='lg:mt-10 mn:mt-6 mx-auto max-w-[52rem] lg:max-w-6xl'>
+        <div>
           <div className='relative sm:ml-[calc(2rem+1px)] sm:pb-12 md:ml-[calc(3.5rem+1px)] lg:ml-[max(calc(14.5rem+1px),calc(100%-48rem))]'>
             <div className='absolute top-3 bottom-0 right-full mr-7 hidden w-px  sm:block md:mr-[3.25rem]'></div>
             <div className='space-y-16'>
@@ -120,7 +117,7 @@ export default async function BlogsPage() {
               ))}
             </div>
           </div>
-        </section>
+        </div>
       </main>
     </div>
   )
