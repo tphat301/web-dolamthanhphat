@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: 'Chào mừng bạn đến với website của mình',
   description: 'Chào mừng bạn đến với website của mình',
   icons: {
-    icon: '/images/favicon.png'
+    icon: `${process.env.NEXT_PUBLIC_BASE_URL}/images/favicon.png`
   },
   openGraph: {
     title: 'Thành Phát - Fullstack Developer',

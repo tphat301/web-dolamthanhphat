@@ -1,26 +1,54 @@
-import PATH from '@/app/constants/paths'
+import PATH from '@/constants/paths'
+import { Blog } from '@/types/blog.types'
+import { SuccessResponseApi } from '@/types/utils.types'
+import { getIdFromNameId } from '@/utils/commons'
 import Link from 'next/link'
 
-/**
- * 
- * export async function generateMetadata({ params }: Props) {
+interface Props {
+  params: Promise<{
+    slug: string
+  }>
+}
+
+async function getBlogDetail(slug: string) {
+  const id = getIdFromNameId(slug)
+  let blog: Blog | null = null
+  try {
+    const responeAPI = await fetch(`${process.env.NEXT_PUBLIC_API}/blogs/detail/${id}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    if (!responeAPI.ok) throw new Error('Call api blog detail faild!')
+    const dataBlog: SuccessResponseApi<Blog> = await responeAPI.json()
+    blog = dataBlog.data
+  } catch (error) {
+    console.error(error)
+  }
+  return blog
+}
+
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params
-  const product = await getProductDetail(slug)
-  if (product) {
+  const data = await getBlogDetail(slug)
+  if (data) {
     return {
-      title: product.seo_title,
-      keywords: product.seo_keywords,
-      description: product.seo_description,
+      title: data.seo_title,
+      keywords: data.seo_keywords,
+      description: data.seo_description,
+      icons: {
+        icon: `${process.env.NEXT_PUBLIC_BASE_URL}/images/favicon.png`
+      },
       openGraph: {
-        title: product.seo_title,
-        description: product.seo_description,
+        title: data.seo_title,
+        description: data.seo_description,
         url: process.env.NEXT_PUBLIC_BASE_URL,
         images: [
           {
-            url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/anh-seo-page-website.jpg`,
-            width: SEO_PAGE.IMAGE_WIDTH,
-            height: SEO_PAGE.IMAGE_HEIGHT,
-            alt: product.seo_title
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/seo.jpg`,
+            width: 200,
+            height: 200,
+            alt: data.seo_title
           }
         ],
         locale: 'vi_VN',
@@ -28,18 +56,18 @@ import Link from 'next/link'
       },
       twitter: {
         card: 'summary_large_image',
-        title: product.seo_title,
-        description: product.seo_description,
-        images: [`${process.env.NEXT_PUBLIC_BASE_URL}/images/anh-seo-page-website.jpg`]
+        title: data.seo_title,
+        description: data.seo_description,
+        images: [`${process.env.NEXT_PUBLIC_BASE_URL}/images/seo.jpg`]
       }
     }
   }
 }
- * 
- * 
- */
 
-export default function BlogDetailPage() {
+export default async function BlogDetailPage({ params }: Props) {
+  const { slug } = await params
+  const blog = await getBlogDetail(slug)
+  if (!blog) return
   return (
     <div className='wrap-content'>
       <div className='flex h-20 items-center'>
@@ -64,14 +92,8 @@ export default function BlogDetailPage() {
           Quay về
         </Link>
       </div>
-      <h1 className='text-2xl font-extrabold tracking-tight  lg:text-3xl '>
-        Kỹ năng SEO cần biết cho mọi Web Developer
-      </h1>
-      <article className='overflow-hidden mt-7'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, fuga ullam? Vitae voluptas, consectetur totam
-        maxime quae obcaecati tenetur? Corrupti tempora aliquam molestias ex dolore dolorem inventore animi totam
-        veniam.
-      </article>
+      <h1 className='text-2xl font-extrabold tracking-tight  lg:text-3xl '>{blog.title}</h1>
+      <article className='overflow-hidden mt-7' dangerouslySetInnerHTML={{ __html: blog.content }} />
     </div>
   )
 }

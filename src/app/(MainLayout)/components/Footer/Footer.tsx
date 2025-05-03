@@ -1,4 +1,4 @@
-import PATH from '@/app/constants/paths'
+import PATH from '@/constants/paths'
 import { Facebook, Instagram, Linkedin, Github } from 'lucide-react'
 import Link from 'next/link'
 const items = [

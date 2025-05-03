@@ -1,4 +1,4 @@
-import PATH from '@/app/constants/paths'
+import PATH from '@/constants/paths'
 import ModeToggle from '@/components/mode-toggle'
 import Link from 'next/link'
 
