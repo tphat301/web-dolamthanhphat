@@ -1,6 +1,7 @@
 import { Roboto } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import Script from 'next/script'
 
 const roboto = Roboto({
   subsets: ['vietnamese'],
@@ -19,6 +20,15 @@ export default function RootLayout({
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
+        <Script src='https://www.googletagmanager.com/gtag/js?id=G-ABCDE12345' strategy='afterInteractive' />
+        <Script id='google-analytics' strategy='afterInteractive'>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ABCDE12345');
+          `}
+        </Script>
       </body>
     </html>
   )

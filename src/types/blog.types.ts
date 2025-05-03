@@ -14,7 +14,4 @@ export interface Blog {
 
 export interface Blogs {
   blogs: Blog[]
-  limit: number
-  page: number
-  total_page: number
 }

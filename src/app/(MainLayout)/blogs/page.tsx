@@ -1,4 +1,5 @@
 import PATH from '@/constants/paths'
+import { SEO_PAGE } from '@/constants/seoPage'
 import { Blog, Blogs } from '@/types/blog.types'
 import { SuccessResponseApi } from '@/types/utils.types'
 import { covertISOToDate, generateNameId } from '@/utils/commons'
@@ -6,22 +7,22 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Blogs - Thành Phát - Fullstack Developer',
-  keywords: 'Đây là trang blogs viết về các vấn đề liên quan đến lập trình website',
-  description: 'Đây là trang blogs viết về các vấn đề liên quan đến lập trình website',
+  title: SEO_PAGE.TITLE_BLOG,
+  keywords: SEO_PAGE.KEYWORDS_BLOG,
+  description: SEO_PAGE.DESCRIPTION_BLOG,
   icons: {
     icon: `${process.env.NEXT_PUBLIC_BASE_URL}/images/favicon.png`
   },
   openGraph: {
-    title: 'Blogs - Thành Phát - Fullstack Developer',
-    description: 'Đây là trang blogs viết về các vấn đề liên quan đến lập trình website',
+    title: SEO_PAGE.TITLE_BLOG,
+    description: SEO_PAGE.DESCRIPTION_BLOG,
     url: process.env.NEXT_PUBLIC_BASE_URL,
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/seo.jpg`,
-        width: 200,
-        height: 200,
-        alt: 'Blogs - Thành Phát - Fullstack Developer'
+        width: SEO_PAGE.WIDTH_IMAGE,
+        height: SEO_PAGE.HEIGHT_IMAGE,
+        alt: SEO_PAGE.TITLE_BLOG
       }
     ],
     locale: 'vi_VN',
@@ -29,14 +30,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blogs - Thành Phát - Fullstack Developer',
-    description: 'Đây là trang blogs viết về các vấn đề liên quan đến lập trình website',
+    title: SEO_PAGE.TITLE_BLOG,
+    description: SEO_PAGE.DESCRIPTION_BLOG,
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/seo.jpg`,
-        width: 200,
-        height: 200,
-        alt: 'Blogs - Thành Phát - Fullstack Developer'
+        width: SEO_PAGE.WIDTH_IMAGE,
+        height: SEO_PAGE.HEIGHT_IMAGE,
+        alt: SEO_PAGE.TITLE_BLOG
       }
     ]
   }

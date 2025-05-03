@@ -1,4 +1,5 @@
 import PATH from '@/constants/paths'
+import { SEO_PAGE } from '@/constants/seoPage'
 import { Blog } from '@/types/blog.types'
 import { SuccessResponseApi } from '@/types/utils.types'
 import { getIdFromNameId } from '@/utils/commons'
@@ -46,8 +47,8 @@ export async function generateMetadata({ params }: Props) {
         images: [
           {
             url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/seo.jpg`,
-            width: 200,
-            height: 200,
+            width: SEO_PAGE.WIDTH_IMAGE,
+            height: SEO_PAGE.HEIGHT_IMAGE,
             alt: data.seo_title
           }
         ],
@@ -93,7 +94,7 @@ export default async function BlogDetailPage({ params }: Props) {
         </Link>
       </div>
       <h1 className='text-2xl font-extrabold tracking-tight  lg:text-3xl '>{blog.title}</h1>
-      <article className='overflow-hidden mt-7' dangerouslySetInnerHTML={{ __html: blog.content }} />
+      <article className='break-words mt-7 leading-10' dangerouslySetInnerHTML={{ __html: blog.content }} />
     </div>
   )
 }
