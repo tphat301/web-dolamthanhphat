@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props) {
   const data = await getBlogDetail(slug)
   if (data) {
     const generateSlug = generateNameId({ name: data.title, id: data._id })
-    const imageUrl = `${process.env.NEXT_PUBLIC_API}/images/${data.image}`
+    const imageUrl = `${process.env.NEXT_PUBLIC_API}/image/${data.image}`
     return {
       title: data.seo_title,
       keywords: data.seo_keywords,
