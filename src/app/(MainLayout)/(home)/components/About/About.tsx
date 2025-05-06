@@ -10,7 +10,8 @@ const About = async () => {
     const responeAPI = await fetch(`${process.env.NEXT_PUBLIC_API}/about`, {
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
+cache: 'no-store'
     })
     if (!responeAPI.ok) throw new Error('Call api about faild!')
     const aboutData: SuccessResponseApi<TypeAboutResponse> = await responeAPI.json()
