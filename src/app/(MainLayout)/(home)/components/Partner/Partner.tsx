@@ -77,7 +77,7 @@ const Partner = () => {
         </div>
         <div className='mn:col-span-12 md:col-span-7 flex flex-col items-center justify-center'>
           <div className='relative mn:after:hidden md:after:block after:content-[""] after:w-[175px] after:h-[175px] after:bg-[url("/images/client-info-bg.png")] after:absolute after:left-[-35px] after:top-[-40px]'>
-            <div className='flex md:gap-10 mn:gap-4 items-center md:mb-16'>
+            <div className='mn:hidden lg:flex gap-10 items-center lg:mb-16'>
               <AuroraText className='text-[#854fee] dark:text-white md:font-extrabold mn:font-bold mn:text-6xl md:text-8xl'>
                 0
                 <NumberTicker
