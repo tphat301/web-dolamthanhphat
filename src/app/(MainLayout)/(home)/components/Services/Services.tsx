@@ -19,7 +19,7 @@ const Services = async () => {
   }
   if (!services) return
   return (
-    <div className='wrap-content md:py-14 mn:py-3'>
+    <div className='wrap-content lg:py-14 mn:py-10'>
       <h2 className='uppercase font-extrabold lg:mb-4 mn:mb-2 md:text-4xl text-center mn:text-3xl'>Dịch vụ nổi bật</h2>
       <p className='text-[#777] dark:text-white mn:text-base lg:text-xl mn:leading-6 lg:leading-7 text-center md:max-w-[498px] mn:max-w-full mx-auto'>
         Thiết kế website Cao cấp - Chuẩn SEO - Responsive

@@ -47,7 +47,7 @@ const brands = [
 
 const Partner = () => {
   return (
-    <div className='wrap-content md:py-10 mn:py-3'>
+    <div className='wrap-content lg:py-10 mn:py-3'>
       <div className='grid grid-cols-12 md:gap-20 mn:overflow-hidden lg:overflow-x-auto'>
         <div className='mn:col-span-12 md:col-span-5 md:mb-0 mn:mb-4'>
           <div className='flex flex-wrap mn:w-[calc(100+10px)] mn:mx-[-5px] md:w-[calc(100+20px)] md:mx-[-10px]'>
@@ -82,7 +82,7 @@ const Partner = () => {
                 0
                 <NumberTicker
                   value={3}
-                  className='whitespace-pre-wrap text-8xl tracking-tighter text-[#854fee] dark:text-white'
+                  className='whitespace-pre-wrap mn:text-6xl md:text-8xl tracking-tighter text-[#854fee] dark:text-white'
                 />
               </AuroraText>
               <TypingAnimation className='mn:text-xl lg:text-4xl font-semibold'>Kinh nghiệm làm việc</TypingAnimation>

@@ -32,7 +32,7 @@ const About = async () => {
           />
         </div>
         <div className='mn:col-span-12 md:col-span-5 flex flex-col justify-center mn:items-center md:items-start md:gap-0 mn:gap-1'>
-          <h2 className='mn:text-xl mn:text-center md:text-start md:text-4xl mn:mb-1 md:mb-5 font-bold uppercase'>
+          <h2 className='mn:text-3xl mn:text-center md:text-start md:text-4xl mn:mb-1 md:mb-5 font-bold uppercase'>
             <AuroraText>{aboutRespone?.title}</AuroraText>
           </h2>
           <div className='text-[#777] dark:text-white line-clamp-7 mn:leading-7 mn:text-justify md:text-start md:leading-8 font-light mn:mb-2 md:mb-4'>
