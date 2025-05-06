@@ -4,6 +4,7 @@ import About from '@/app/(MainLayout)/(home)/components/About'
 import Partner from '@/app/(MainLayout)/(home)/components/Partner'
 import Services from '@/app/(MainLayout)/(home)/components/Services'
 import { SEO_PAGE } from '@/constants/seoPage'
+import Courses from '@/app/(MainLayout)/(home)/components/Courses'
 
 export const metadata: Metadata = {
   title: SEO_PAGE.TITLE_HOME,
@@ -46,6 +47,7 @@ export default function HomePage() {
       <About />
       <Partner />
       <Services />
+      <Courses />
     </div>
   )
 }

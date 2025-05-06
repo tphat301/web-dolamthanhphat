@@ -1,3 +1,4 @@
+import { AuroraText } from '@/components/magicui/aurora-text'
 import PATH from '@/constants/paths'
 import { SEO_PAGE } from '@/constants/seoPage'
 import { Blog, Blogs } from '@/types/blog.types'
@@ -57,8 +58,10 @@ export default async function BlogsPage() {
   if (!blogs) return
   return (
     <div className='wrap-content mn:py-10 lg:py-16 overflow-hidden'>
-      <h1 className='font-bold mn:text-2xl lg:text-4xl capitalize text-center tracking-wider mb-2'>
-        Đỗ Lâm Thành Phát Blog
+      <h1 className='text-center'>
+        <AuroraText className='font-bold mn:text-2xl lg:text-4xl capitalize tracking-wider mb-2'>
+          Đỗ Lâm Thành Phát Blog
+        </AuroraText>
       </h1>
       <p className='text-center text-base'>Các bài viết liên quan đến lập trình</p>
       <main className='lg:mt-10 mn:mt-6 mx-auto max-w-[52rem] lg:max-w-6xl'>

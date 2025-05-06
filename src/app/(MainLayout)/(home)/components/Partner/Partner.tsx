@@ -1,3 +1,8 @@
+import { AuroraText } from '@/components/magicui/aurora-text'
+import { NumberTicker } from '@/components/magicui/number-ticker'
+import { ShineBorder } from '@/components/magicui/shine-border'
+import { SparklesText } from '@/components/magicui/sparkles-text'
+import { TypingAnimation } from '@/components/magicui/typing-animation'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -49,16 +54,23 @@ const Partner = () => {
             {brands.map((brand) => (
               <div
                 key={brand.id}
-                className='mn:w-[calc(100%/2_-_10px)] mn:my-[5px] mn:mx-[5px] md:w-[calc(100%/3_-_20px)] md:mx-[10px] border border-[#eeeeee] flex items-center justify-center md:my-[10px] h-[100px] hover:cursor-pointer single-brand-item'
+                className='mn:w-[calc(100%/2_-_10px)] mn:my-[5px] mn:mx-[5px] md:w-[calc(100%/3_-_20px)] md:mx-[10px] md:my-[10px] h-[100px] relative overflow-hidden'
               >
-                <Image
-                  src={`/images/${brand.img}`}
-                  className='m-auto max-h-full'
-                  width={80}
-                  height={40}
-                  quality={100}
-                  alt='Image'
-                />
+                <ShineBorder
+                  shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']}
+                  className='shine-border-fix flex items-center justify-center'
+                >
+                  <div className='relative z-10 w-full h-full flex items-center justify-center bg-white'>
+                    <Image
+                      src={`/images/${brand.img}`}
+                      className='h-auto object-contain !mask-none ![mask:none] ![-webkit-mask:none]'
+                      width={80}
+                      height={40}
+                      quality={100}
+                      alt='Image'
+                    />
+                  </div>
+                </ShineBorder>
               </div>
             ))}
           </div>
@@ -66,10 +78,14 @@ const Partner = () => {
         <div className='mn:col-span-12 md:col-span-7 flex flex-col items-center justify-center'>
           <div className='relative mn:after:hidden md:after:block after:content-[""] after:w-[175px] after:h-[175px] after:bg-[url("/images/client-info-bg.png")] after:absolute after:left-[-35px] after:top-[-40px]'>
             <div className='flex md:gap-10 mn:gap-4 items-center md:mb-16'>
-              <span className='text-[#854fee] dark:text-white md:font-extrabold mn:font-bold mn:text-6xl md:text-8xl '>
-                03
-              </span>
-              <span className='mn:text-xl md:text-2xl font-semibold'>Kinh nghiệm làm việc</span>
+              <AuroraText className='text-[#854fee] dark:text-white md:font-extrabold mn:font-bold mn:text-6xl md:text-8xl'>
+                0
+                <NumberTicker
+                  value={3}
+                  className='whitespace-pre-wrap text-8xl tracking-tighter text-[#854fee] dark:text-white'
+                />
+              </AuroraText>
+              <TypingAnimation className='mn:text-xl lg:text-4xl font-semibold'>Kinh nghiệm làm việc</TypingAnimation>
             </div>
             <div className='flex items-center mn:gap-2 md:gap-4'>
               <div>
@@ -92,12 +108,8 @@ const Partner = () => {
                 <p className='mn:text-base md:text-xl text-[#854fee] dark:text-white uppercase'>
                   Gọi ngay cho tôi nếu bạn có nhu cầu làm website
                 </p>
-                <Link
-                  href='tel:0339355715'
-                  className='mn:text-xl md:text-2xl font-semibold hover:text-[#854fee]'
-                  title='Phone'
-                >
-                  0339.355.715
+                <Link href='tel:0339355715' className=' font-extrabold hover:text-[#854fee]' title='Phone'>
+                  <SparklesText className='mn:text-xl lg:text-4xl'>0339.355.715</SparklesText>
                 </Link>
               </div>
             </div>

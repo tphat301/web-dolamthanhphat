@@ -1,3 +1,4 @@
+import { BorderBeam } from '@/components/magicui/border-beam'
 import { Service } from '@/types/service.types'
 import { SuccessResponseApi } from '@/types/utils.types'
 import Image from 'next/image'
@@ -19,15 +20,15 @@ const Services = async () => {
   if (!services) return
   return (
     <div className='wrap-content md:py-14 mn:py-3'>
-      <h2 className='uppercase font-bold lg:mb-4 mn:mb-2 md:text-4xl text-center mn:text-3xl'>Dịch vụ nổi bật</h2>
-      <p className='text-[#777] dark:text-white mn:text-[14px] lg:text-base mn:leading-6 lg:leading-7 text-center md:max-w-[498px] mn:max-w-full mx-auto'>
+      <h2 className='uppercase font-extrabold lg:mb-4 mn:mb-2 md:text-4xl text-center mn:text-3xl'>Dịch vụ nổi bật</h2>
+      <p className='text-[#777] dark:text-white mn:text-base lg:text-xl mn:leading-6 lg:leading-7 text-center md:max-w-[498px] mn:max-w-full mx-auto'>
         Thiết kế website Cao cấp - Chuẩn SEO - Responsive
       </p>
       <div className='grid grid-cols-12 md:gap-6 mn:gap-2 mn:mt-4 lg:mt-6'>
         {services.slice(0, 4).map((service, index) => (
           <div
             key={service._id}
-            className='mn:col-span-6 lg:col-span-3 bg-[#f9f9fd] flex flex-col justify-center items-center lg:px-6 lg:py-10 mn:p-4 single-service-item hover:bg-white dark:bg-transparent dark:hover:bg-transparent'
+            className='mn:col-span-6 lg:col-span-3 bg-[#f9f9fd] flex flex-col justify-center items-center lg:px-6 lg:py-10 mn:p-4 single-service-item hover:bg-white dark:bg-transparent dark:hover:bg-transparent relative overflow-hidden'
           >
             <div className='md:mb-8 mn:mb-3'>
               <Image
@@ -44,6 +45,7 @@ const Services = async () => {
             <p className='text-[#777] lg:text-base mn:text-[14px] dark:text-white mn:leading-6 lg:leading-7 line-clamp-3 text-center'>
               {service.description}
             </p>
+            <BorderBeam duration={8} size={100} />
           </div>
         ))}
       </div>
