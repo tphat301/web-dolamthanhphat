@@ -95,7 +95,13 @@
       background-position: 100% -100%;
     }
   }
-}
+  --animate-gradient: gradient 8s linear infinite
+;
+  @keyframes gradient {
+  to {
+    background-position: var(--bg-size, 300%) 0;
+    }
+  }}
 
 .wrap-content {
   max-width: 1200px;
@@ -268,4 +274,191 @@
   mask: none !important;
   -webkit-mask-composite: initial !important;
   mask-composite: initial !important;
+}
+.logo-footer,
+.logo {
+  z-index: 2;
+  background: radial-gradient(circle at 100%, #4b296980, #563277, #4a378c 50%, #4066a8 70%, #32517380);
+  border-radius: 10px;
+  transition: all 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0) scale(1);
+}
+.logo {
+  width: 60px;
+  height: 60px;
+}
+.logo-footer {
+  width: 134px;
+  height: 134px;
+  box-shadow: 0 30px 35px -10px #0009;
+}
+.logo-footer-border,
+.logo-border {
+  position: absolute;
+  border-radius: 10px;
+  inset: 2px;
+  transition: all 1s ease;
+  border: 5px solid rgba(89, 82, 108, 0.3);
+  opacity: 0.8;
+  background-color: #2828284d;
+}
+
+.logo-footer-edge,
+.logo-edge {
+  position: absolute;
+  inset: 0;
+  border: 2px solid;
+  border-image-slice: 1;
+  opacity: 1;
+  border-image-source: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(255, 255, 255, 0.15) 65%,
+    rgba(0, 0, 0, 0) 90%
+  );
+  animation: logoRotateGradient 8s linear infinite;
+  will-change: opacity, border;
+  transition: all 1s ease-in-out;
+}
+
+.logo-footer-filter,
+.logo-filter {
+  position: absolute;
+  inset: 0;
+  transform: translateZ(0) scale(0.97);
+  transition: transform 0.3s ease-in-out;
+  background:
+    linear-gradient(130deg, #3d3d3d4d, #3d3d3d00 40%), linear-gradient(130deg, #2a213f00 60%, #3d3d3d4d),
+    linear-gradient(to bottom, #100e1a4d 60%, #0c0c0c00);
+  border-radius: 10px;
+}
+.logo-footer-filter::before,
+.logo-filter::before {
+  position: absolute;
+  content: '';
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: linear-gradient(-130deg, #2a213f00 40%, #9a98de33, #2a213f00 60%);
+  background-size: 400%;
+  filter: blur(10px);
+  border-radius: 100px;
+  mix-blend-mode: color-dodge;
+  animation: shimmerEffect 8s infinite linear;
+}
+
+.logo-footer-filter::after,
+.logo-filter::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: linear-gradient(130deg, #3d3d3d00 45%, #9a98de4d 50%, #3d3d3d00 60%);
+  background-size: 500%;
+  filter: blur(8px);
+  border-radius: 100px;
+  mix-blend-mode: color-dodge;
+  animation: shimmerEffect 6s infinite linear;
+}
+
+.logo-footer-img,
+.logo-img {
+  z-index: 3;
+  opacity: 1;
+  filter: brightness(3.5);
+  transition: all 0.2s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.logo-footer-img {
+  width: fit-content;
+}
+.logo-img {
+  width: 20px;
+}
+
+@keyframes shimmerEffect {
+  100% {
+    background-position-x: 0;
+  }
+}
+
+@keyframes logoRotateGradient {
+  0% {
+    border-image-source: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(255, 255, 255, 0.15) 65%,
+      rgba(0, 0, 0, 0) 90%
+    );
+  }
+  25% {
+    border-image-source: linear-gradient(
+      to right top,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(255, 255, 255, 0.15) 65%,
+      rgba(0, 0, 0, 0) 90%
+    );
+  }
+  50% {
+    border-image-source: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(255, 255, 255, 0.15) 65%,
+      rgba(0, 0, 0, 0) 90%
+    );
+  }
+  75% {
+    border-image-source: linear-gradient(
+      to left bottom,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(255, 255, 255, 0.15) 65%,
+      rgba(0, 0, 0, 0) 90%
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(255, 255, 255, 0.15) 65%,
+      rgba(0, 0, 0, 0) 90%
+    );
+  }
+}
+.logo-footer-shine-effect,
+.shine-effect {
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.6rem #ffffad80) blur(10px);
+  background: linear-gradient(130deg, #fff0 0%, #ffffff40 50%, #ffffff3d 100%);
+  animation: 7.5s linear infinite slideShine;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  transform: rotate(0);
+}
+.logo-footer-shine-effect {
+  width: 220px;
+  height: 350px;
+}
+.shine-effect {
+  width: 80px;
+  height: 269px;
+}
+@keyframes slideShine {
+  0% {
+    transform: translate(-100%, -100%) rotate(40deg);
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(40deg);
+  }
 }

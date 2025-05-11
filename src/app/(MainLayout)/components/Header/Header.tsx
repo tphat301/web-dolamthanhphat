@@ -1,11 +1,27 @@
 import ModeToggle from '@/components/mode-toggle'
 import Link from 'next/link'
 import Menu from '@/app/(MainLayout)/components/Menu'
+import { ShineBorder } from '@/components/magicui/shine-border'
+import Image from 'next/image'
 
 const Header = () => {
   return (
-    <header className='sticky inset-0 z-40 w-full mn:py-3 md:py-4 shadow-[0px_3px_16px_0px_rgba(0,0,0,0.1)] bg-background/90 backdrop-blur-lg dark:bg-black'>
+    <header className='sticky inset-0 z-40 w-full mn:py-3 lg:py-4 shadow-[0px_3px_16px_0px_rgba(0,0,0,0.1)] bg-background/90 backdrop-blur-lg dark:bg-black'>
       <div className='wrap-content flex items-center'>
+        <div className='logo mn:hidden lg:block mr-8'>
+          <ShineBorder
+            borderWidth={2}
+            shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']}
+            className='rounded-[10px] overflow-hidden'
+          />
+          <div className='logo-background'>
+            <div className='logo-border'></div>
+            <div className='logo-edge'></div>
+          </div>
+          <div className='logo-filter'></div>
+          <div className='shine-effect'></div>
+          <Image src='/images/logo-main.png' width={46} height={64} quality={100} className='logo-img' alt='Logo' />
+        </div>
         <div className='mn:hidden md:block font-bold uppercase text-2xl text-multi-gradient dark:text-white mr-10 relative hover:bg-primary/90 before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:bg-[length:200%] before:[filter:blur(calc(0.8*1rem))]'>
           Học website kiếm tiền
         </div>
